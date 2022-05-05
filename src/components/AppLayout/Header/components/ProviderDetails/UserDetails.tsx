@@ -100,12 +100,6 @@ type Props = {
   userAddress: string
 }
 
-const adaptToFantomNetwork = (network): string => {
-  if (network == 'MAINNET') return 'OPERA'
-  else if (network == 'RINKEBY') return 'OPERA TESTNET'
-  else return network
-}
-
 const useStyles = makeStyles(styles)
 
 export const UserDetails = ({
@@ -169,7 +163,7 @@ export const UserDetails = ({
         <Spacer />
         <CircleDot className={classes.logo} />
         <Paragraph align="right" className={classes.labels} noMargin weight="bolder">
-          {upperFirst(adaptToFantomNetwork(ETHEREUM_NETWORK[network]))}
+          {upperFirst(ETHEREUM_NETWORK[network])}
         </Paragraph>
       </Row>
       <Hairline margin="xs" />

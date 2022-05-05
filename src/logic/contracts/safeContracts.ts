@@ -1,6 +1,5 @@
 import { AbiItem } from 'web3-utils'
 import GnosisSafeSol from '@gnosis.pm/safe-contracts/build/contracts/GnosisSafe.json'
-import ProxyFactorySol from '@gnosis.pm/safe-contracts/build/contracts/GnosisSafeProxyFactory.json'
 import Web3 from 'web3'
 
 import { ETHEREUM_NETWORK } from 'src/config/networks/network.d'
@@ -19,7 +18,6 @@ import SpendingLimitModule from './artifacts/AllowanceModule.json'
 import { GNOSIS_TESTNET_ADDRESSES } from '../../web3.constants/addresses'
 import gnosis_safe_abi from '../../web3.constants/gnosis_safe'
 import proxy_factory_abi from '../../web3.constants/proxy_factory'
-import safe_master_copy_address_v_10 from '../../web3.constants/safe_master_copy_address_v_10'
 
 export const SENTINEL_ADDRESS = GNOSIS_TESTNET_ADDRESSES.SENTINEL_ADDRESS
 export const MULTI_SEND_ADDRESS = GNOSIS_TESTNET_ADDRESSES.MULTISEND
@@ -29,7 +27,6 @@ export const SAFE_MASTER_COPY_ADDRESS_V10 = GNOSIS_TESTNET_ADDRESSES.SAFE_MASTER
 
 const Gnosis_Safe_ABI = gnosis_safe_abi
 const Proxy_Factory_ABI = proxy_factory_abi
-const Safe_Master_Copy_Address_V_10_ABI = safe_master_copy_address_v_10
 
 let proxyFactoryMaster: GnosisSafeProxyFactory
 let safeMaster: GnosisSafe

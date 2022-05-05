@@ -45,6 +45,7 @@ export enum ETHEREUM_NETWORK {
   VOLTA = 73799,
   UNKNOWN = 0,
   LOCAL = 4447,
+  SKALE = 0xcbd8dd20f3c51,
 }
 
 export type NetworkSettings = {

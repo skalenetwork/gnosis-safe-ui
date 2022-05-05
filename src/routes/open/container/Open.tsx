@@ -101,8 +101,12 @@ export const createSafe = (values: InitialValuesForm, userAccount: string): Prom
     })
     .then(async (receipt) => {
       await checkReceiptStatus(receipt.transactionHash)
-      const safeAddress = receipt.events?.ProxyCreation.returnValues.proxy
-      const safeProps = await getSafeProps(safeAddress, name, ownersNames, ownerAddresses)
+      // SKALE
+      // Needs to be parsed differently
+      console.log(receipt.events?.[0].address)
+      const safeAddress = receipt.events?.[0].address
+      //const safeProps = await getSafeProps(safeAddress as string, name, ownersName, ownerAddresses)
+      const safeProps = await getSafeProps(safeAddress as string, name, ownersNames, ownerAddresses)
       // returning info for testing purposes, in app is fully async
       return { safeAddress: safeProps.address, safeTx: receipt }
     })

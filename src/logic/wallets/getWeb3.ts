@@ -34,7 +34,7 @@ const httpProviderOptions = {
 export const web3ReadOnly = new Web3(
   process.env.NODE_ENV !== 'test'
     ? new Web3.providers.HttpProvider(getRpcServiceUrl(), httpProviderOptions)
-    : 'https://xapi.testnet.fantom.network/lachesis',
+    : 'https://staging-v2.skalenodes.com/v1/purring-alfecca-meridiana',
 )
 
 let web3 = web3ReadOnly
@@ -42,6 +42,7 @@ export const getWeb3 = (): Web3 => web3
 
 export const resetWeb3 = (): void => {
   web3 = web3ReadOnly
+  console.log('web3ReadyOnlyModeEnabled')
 }
 
 export const getAccountFrom = async (web3Provider: Web3): Promise<string | null> => {
